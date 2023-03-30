@@ -1,0 +1,8 @@
+{
+  "name": "01-my-first-app",
+  "version": "1.0.0",
+  "description": "Mi primera aplicacion de electron",
+  "main": "main.js",
+  "author": "Omar",
+  "license": "MIT"
+}
