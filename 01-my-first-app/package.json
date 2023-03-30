@@ -4,5 +4,11 @@
   "description": "Mi primera aplicacion de electron",
   "main": "main.js",
   "author": "Omar",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^23.2.1"
+  },
+  "scripts": {
+    "start": "electron ."
+  }
 }
