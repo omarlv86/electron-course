@@ -81,10 +81,12 @@ class Marcadores{
     }
 
     reportarError(error, url){
+        this.mensajeError.classList.remove('invisible')
         this.mensajeError.innerHTML = `Ocurrio un error al intentar acceder a ${url} : ${error} ;`;
 
         setTimeout(() => {
             this.mensajeError.innerHTML = null;
+            this.mensajeError.classList.add('invisible')
         }, 5000)
     }
 
