@@ -1,0 +1,20 @@
+{
+  "name": "marcadores",
+  "version": "1.0.0",
+  "description": "Aplicacion para la gestion de marcadores - bookmarks",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [
+    "Electron",
+    "Escritorio",
+    "Aplicacion",
+    "Multiplataforma"
+  ],
+  "author": "Omar Lugo Vargas",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^24.1.2"
+  }
+}
