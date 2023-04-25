@@ -65,10 +65,10 @@ class Marcadores{
     }
 
     generarHTMLMarcador(marcador){
-        return `<div class="enlace">
+        return `<li class="list-group-item enlace">
                     <h3>${marcador.titulo}</h3>
-                    <p><a href="${marcador.url}">${marcador.url}</a></p>
-                </div>
+                    <a href="${marcador.url}">${marcador.url}</a>
+                </li>
                 `
     }
 
@@ -77,7 +77,7 @@ class Marcadores{
 
         let html = marcadoresArray.map(this.generarHTMLMarcador).join('');
 
-        this.marcadores.innerHTML = html
+        this.marcadores.innerHTML = `<ul class="list-group">${html}</ul>`
     }
 
     reportarError(error, url){
