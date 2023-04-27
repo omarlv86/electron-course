@@ -33,7 +33,7 @@ function crearVentanaPrincipal(){
 
     ventanaPrincipal.on('closed', () => {
         ventanaPrincipal = null
-    })
+    });
 }
 
 function abrirVentanaAcercaDe(){
