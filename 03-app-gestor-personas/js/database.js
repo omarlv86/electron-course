@@ -24,7 +24,7 @@ exports.obtenerPersonas = function(operacion){
     });
 }
 
-exports.eliminaPersona = function(id){
+exports.eliminarPersona = function(id){
     bd.remove({_id : id}, -{}, function(err, numeroRegistrosEliminados){
 
     });
