@@ -1,9 +1,13 @@
-const baseDatos = require('./database');
+const baseDatos = require('./js/database');
 
 class GestorPersonas{
     constructor(){
         this.frmNuevoRegistro = document.getElementById('frmNuevoRegistro');
-        this.registros = document.getElementById('registros')
+        this.registros = document.getElementById('registros');
+        this.nombres = document.getElementById('nombres')
+        this.apellidos = document.getElementById('apellidos')
+        this.correo = document.getElementById('correo')
+        this.btnCrearRegistro = document.getElementById('btnCrearRegistro')
 
         this.cargarRegistrosPersona();
 
@@ -11,21 +15,32 @@ class GestorPersonas{
     }
 
     agregarEventListeners(){
-        this.frmNuevoRegistro.addEventListener('submit', this.crearRegistroPersona.bind(this))
+        this.frmNuevoRegistro.addEventListener('submit', this.crearRegistroPersona.bind(this));
+        
     }
 
-    crearRegistroPersona(){
 
+    crearRegistroPersona(evento){
+        evento.preventDefault();
+        
+        baseDatos.agregarPersona(this.nombres.value, this.apellidos.value, this.correo.value);
+
+        this.nombres.value = '';
+        this.apellidos.value = '';
+        this.correo.value = '';
+
+        this.cargarRegistrosPersona();
     }
 
     generarHtmlRegistroPersona(persona){
         return `<tr>
             <td>${persona.nombres}</td>
             <td>${persona.apellidos}</td>
-            <td>${persona.correos}</td>
+            <td>${persona.correo}</td>
             <td>
-              <input type="button" class="btn btn-danger" onclick="${this.eliminarRegistroPersona(persona._id)}">
-            </td>
+              <button type="button" class="btn btn-danger btn-sm" onclick="{gestorPersonas.eliminarRegistroPersona('${persona._id}')}" value="Eliminar">
+                <i class="fas fa-trash"></i>
+              </button>
         </tr>`
     }
 
@@ -43,3 +58,5 @@ class GestorPersonas{
         this.cargarRegistrosPersona();
     }
 }
+
+let gestorPersonas = new GestorPersonas();

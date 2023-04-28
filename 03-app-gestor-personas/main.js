@@ -11,7 +11,14 @@ let menuAplicacionPlantilla = [
               click: () => {
                 abrirVentanaAcercaDe()
               }
-            }
+            },
+            {
+                label: "Toggle Dev Tools",
+                accelerator: "F12",
+                click: () => {
+                  ventanaPrincipal.webContents.toggleDevTools();
+                }
+              }
         ]
     }
 ]
