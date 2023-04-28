@@ -16,6 +16,17 @@ exports.agregarPersona = function(nombres, apellidos, correo){
     });
 }
 
+exports.actualizarPersona = function(id, nombres, apellidos, correo){
+    var persona = {
+        nombres,
+        apellidos,
+        correo
+    }
+    bd.update({_id: id}, persona, function(err, numReplaced){
+        
+    })
+}
+
 exports.obtenerPersonas = function(operacion){
     bd.find({}, function(err, personas){
         if(personas){
